@@ -1,23 +1,40 @@
 const inquirer = require("inquirer");
-const db = require('./db');
+const mysql = require("mysql2/promise");
 
-// view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
-const questions = {
-    {
-        name: "beginning",
-        type: "list",
-        message: "What would you like to do?",
-        choices: [
-            "View all departments",
-            "View all roles",
-            "View all employees",
-            "Add a department",
-            "Add a role",
-            "Add an employee",
-            "Update an employee role"
-        ]
-    },
-    {
+async function run() {
+  const connection = await mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "password1",
+    database: "employees"
+  });
+  
+  const promptChoices = [
+    "View all departments",
+    "View all roles",
+    "View all employees",
+    "Add a department",
+    "Add a role",
+    "Add an employee",
+    "Update an employee role"
+  ];
 
+  const answers = await inquirer.prompt([
+    {
+      name: "beginning",
+      type: "list",
+      message: "What would you like to do?",
+      choices: promptChoices
     }
-};
+  ]);
+
+  const beginningAnswers = answers.beginning;
+  console.log(beginningAnswers);
+
+  // Close the MySQL connection
+  connection.end();
+}
+
+run().catch((error) => {
+  console.error("Error:", error);
+});

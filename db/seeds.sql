@@ -2,28 +2,28 @@ USE employees;
 
 INSERT INTO department (name)
 VALUES
-('Marketing'), --1
-('Development'), --2
-('Human Resources'), --3
-('Legal'), --4
-('Finances'); --5
+('Marketing'), 
+('Development'), 
+('Human Resources'), 
+('Legal'), 
+('Finances'); 
 
 INSERT INTO role (title, salary, department_id)
 VALUES
-('Marketing Director', 120000, 1), --1
-('Marketing Specialist', 80000, 1), --2
-('Project Manager', 110000, 2), --3
-('Lead Engineer', 90000, 2), --4
-('Software Engineer', 80000, 2), --5
-('Artist', 75000, 2), --6
-('Music Producer', 85000, 2), --7
-('Human Resources Manager', 115000, 3), --8
-('Human Resources Specialist', 75000, 3), --9
-('Senior Lawyer', 130000, 4), --10
-('Junior Lawyer', 90000, 4), --11
-('Paralegal', 70000, 4), --12
-('Account Manager', 125000, 5), --13
-('Accountant', 100000, 4); --14
+('Marketing Director', 120000, 1), 
+('Marketing Specialist', 80000, 1), 
+('Project Manager', 110000, 2),
+('Lead Engineer', 90000, 2),
+('Software Engineer', 80000, 2), 
+('Artist', 75000, 2), 
+('Music Producer', 85000, 2),
+('Human Resources Manager', 115000, 3),
+('Human Resources Specialist', 75000, 3), 
+('Senior Lawyer', 130000, 4),
+('Junior Lawyer', 90000, 4), 
+('Paralegal', 70000, 4), 
+('Account Manager', 125000, 5), 
+('Accountant', 100000, 4); 
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
@@ -40,4 +40,4 @@ VALUES
 ('Olivia', 'Santana', 11, 10),
 ('Preston', 'Hill', 12, 11),
 ('Edward', 'Davis', 13, NULL),
-('Benjamin', 'Clark', 14, 13),
+('Benjamin', 'Clark', 14, 13);
